@@ -1,17 +1,15 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 import PcaHero from "../components/pcaHero";
-import Form from "../components/form";
 
-const Contact = () => {
+const Calender = () => {
   return (
     <div>
       <Navbar />
-      <PcaHero heading="Contact" text="Have any questions? Ill answer them!" />
-      <Form />
+      <PcaHero />
       <Footer />
     </div>
   );
 };
 
-export default Contact;
+export default Calender;

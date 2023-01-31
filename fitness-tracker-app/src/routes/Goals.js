@@ -1,15 +1,15 @@
 import Navbar from "../components/Navbar";
-import HeroImg from "../components/HeroImg";
 import Footer from "../components/footer";
+import PcaHero from "../components/pcaHero";
 
-const Home = () => {
+const Goals = () => {
   return (
     <div>
       <Navbar />
-      <HeroImg />
+      <PcaHero heading="Goal" text="What are we crushing?" />
       <Footer />
     </div>
   );
 };
 
-export default Home;
+export default Goals;
