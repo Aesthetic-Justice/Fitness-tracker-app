@@ -1,4 +1,4 @@
-const { gpl } = require(`apollo-server-express`);
+/* const { gpl } = require(`apollo-server-express`);
 
 const typeDefs = gpl`
     type User {
@@ -8,4 +8,4 @@ const typeDefs = gpl`
         password: String
     }
     
-    `
+    ` */
