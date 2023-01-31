@@ -7,7 +7,6 @@ const Workouts = () => {
     <div>
       <Navbar />
       <PcaHero heading="Workouts" text="Have any questions? Ill answer them!" />
-
       <Footer />
     </div>
   );

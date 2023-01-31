@@ -6,7 +6,7 @@ const Goals = () => {
   return (
     <div>
       <Navbar />
-      <PcaHero heading="Goal" text="What are we crushing?" />
+      <PcaHero heading="Goals" text="What are we crushing?" />
       <Footer />
     </div>
   );
