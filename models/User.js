@@ -18,10 +18,10 @@ const userSchema = new Schema(
             type: String,
             required: true
         },
-        routines: [
+        workouts: [
             {
                 type: Schema.Types.ObjectId,
-                ref: "workout"
+                ref: "Workout"
             }
         ]
     },
@@ -48,6 +48,6 @@ userSchema.methods.isCorrectPassword = async function (password) {
     return bcrypt.compare(password, this.password);
 };
 
-const User = model(`user`, userSchema);
+const User = model(`User`, userSchema);
 
 module.exports = User;
