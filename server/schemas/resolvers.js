@@ -18,8 +18,9 @@ const resolvers = {
     Signup: async(parent, {username,email,password}) => {
       return User.create({username,email,password});
     },
-    Login: async(parent,{username,password}) =>{
+    Login: async(parent,{username,password}) => {
       
+
     }
   },
 };
