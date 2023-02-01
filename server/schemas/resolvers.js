@@ -3,12 +3,12 @@ const { AuthenticationError } = require(`apollo-server-express`);
 /* const { signToken } = require(`../utils`); */
 
 const resolvers = {
-    Query: {
-
-    },
-    Mutation: {
-
-    }
+  Query: {
+    //
+  },
+  Mutation: {
+    // TODO: addUser
+  },
 };
 
 module.exports = resolvers;
