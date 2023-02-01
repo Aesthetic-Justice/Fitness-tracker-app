@@ -2,7 +2,7 @@ import "./Navbar.css";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Nav, Navbar, Modal, Tab, Button } from "react-bootstrap";
+import { Nav, Modal, Button } from "react-bootstrap";
 import SignUpForm from "./SignupForm";
 import LoginForm from "./LoginForm";
 import Auth from "../utils/auth";
@@ -73,9 +73,6 @@ function Example({ show, setShow }) {
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
           <Nav variant="tabs" defaultActiveKey="/home">
             <Nav.Item>
               <Nav.Link onClick={() => setCurrTab("login")}>Login</Nav.Link>
@@ -84,14 +81,13 @@ function Example({ show, setShow }) {
               <Nav.Link onClick={() => setCurrTab("signup")}>Sign Up</Nav.Link>
             </Nav.Item>
           </Nav>
+        </Modal.Header>
+        <Modal.Body>
           <div>{currTab === "signup" ? <SignUpForm /> : <LoginForm />}</div>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
           </Button>
         </Modal.Footer>
       </Modal>
