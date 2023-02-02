@@ -43,18 +43,6 @@ const footer = () => {
                 style={{ color: "#fff", marginRight: "1rem" }}
               />
             </a>
-            <a href="https://www.linkedin.com/in/bannywalia/">
-              <FaLinkedin
-                size={30}
-                style={{ color: "#fff", marginRight: "1rem" }}
-              />
-            </a>
-            <a href="https://www.instagram.com/madebybenu/">
-              <FaInstagram
-                size={30}
-                style={{ color: "#fff", marginRight: "1rem" }}
-              />
-            </a>
           </div>
         </div>
       </div>
