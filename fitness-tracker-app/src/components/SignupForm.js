@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
-import { createUser } from "../utils/API";
+import { useMutation } from "@apollo/client";
+import { SIGNUP } from "../utils/mutations";
 import Auth from "../utils/auth";
 
 const SignupForm = () => {
-  // set initial form state
   const [userFormData, setUserFormData] = useState({
     username: "",
     email: "",
     password: "",
   });
-  // set state for form validation
+
   const [validated] = useState(false);
-  // set state for alert
+
   const [showAlert, setShowAlert] = useState(false);
+
+  const [signup, { error }] = useMutation(SIGNUP);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -31,18 +33,12 @@ const SignupForm = () => {
     }
 
     try {
-      const response = await createUser(userFormData);
-
-      if (!response.ok) {
-        throw new Error("something went wrong!");
-      }
-
-      const { token, user } = await response.json();
-      console.log(user);
-      Auth.login(token);
-    } catch (err) {
-      console.error(err);
-      setShowAlert(true);
+      const { data } = await signup({
+        variables: { ...userFormData },
+      });
+      Auth.login(data.signup.token);
+    } catch (error) {
+      console.error(error);
     }
 
     setUserFormData({
@@ -63,7 +59,7 @@ const SignupForm = () => {
           show={showAlert}
           variant="danger"
         >
-          Something went wrong with your signup!
+          {error && <br>Sign-up failed.</br>}
         </Alert>
 
         <Form.Group>
