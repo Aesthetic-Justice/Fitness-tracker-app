@@ -64,7 +64,7 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addWorkoutToUser: async (_parent, workoutData ) => {
+/*     addWorkoutToUser: async (_parent, workoutData ) => {
       if(context.user){
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
@@ -85,7 +85,7 @@ const resolvers = {
         return updatedUser;
       }
       throw new AuthenticationError("You have to log in first.");
-    }
+    } */
   },
 };
 
