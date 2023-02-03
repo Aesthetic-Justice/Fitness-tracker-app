@@ -17,12 +17,12 @@ const resolvers = {
     },
     //get All workouts
     workouts: async () => {
-      return Workout.find()
+      return Workout.find();
     },
     //get workout by ID
-    workout: async ({ workoutId}) => {
+    workout: async ({ workoutId }) => {
       try {
-        const workoutData = await Workout.findOne({ _id: workoutId});
+        const workoutData = await Workout.findOne({ _id: workoutId });
         return workoutData;
       } catch (err) {
         throw new Error("No workout by the given ID");
@@ -30,7 +30,7 @@ const resolvers = {
     },
     //get All sets
     sets: async () => {
-      return Set.find()
+      return Set.find();
     },
     //get set by ID
     set: async ({ setId }) => {
@@ -40,12 +40,12 @@ const resolvers = {
       } catch (err) {
         throw new Error("No Set by the given ID");
       }
-    }
+    },
   },
 
   Mutation: {
     signup: async (_parent, _args) => {
-      const user = await User.create(args);
+      const user = await User.create(_args);
       const token = signToken(user);
 
       return { token, user };
