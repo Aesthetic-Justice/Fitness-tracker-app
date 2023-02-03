@@ -1,12 +1,14 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 import PcaHero from "../components/pcaHero";
+import Workout from "../components/workout";
 
 const Workouts = () => {
   return (
     <div>
       <Navbar />
-      <PcaHero heading="Workouts" text="Have any questions? Ill answer them!" />
+      <PcaHero heading="Workouts" />
+      <Workout/>
       <Footer />
     </div>
   );
