@@ -5,6 +5,7 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
+    //get this User
     me: async (_parent, _args, context) => {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id }).select(
@@ -14,6 +15,19 @@ const resolvers = {
       }
       throw new AuthenticationError("You have to log in first!");
     },
+    //get All workouts
+    workouts: async () => {
+      return Workout.find()
+    },
+    //get workout by ID
+    workout: async (workoutID) => {
+      try {
+        const workoutData = await Workout.findById(workoutID);
+        return workoutData;
+      } catch (err) {
+        throw new Error("No workout by the given ID");
+      }
+    }
   },
 
   Mutation: {
