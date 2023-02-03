@@ -64,6 +64,28 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+/*     addWorkoutToUser: async (_parent, workoutData ) => {
+      if(context.user){
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { workouts: workoutData}},
+          { new: true}
+        );
+        return updatedUser;
+      }
+      throw new AuthenticationError("You have to log in first.");
+    },
+    removeWorkoutFromUser: async (_parent, { workoutId }) => {
+      if(context.user){
+        const updatedUser = await User.findOneAndDelete(
+          { _id: context.user._id },
+          { $pull: { workouts: { workoutId }}},
+          { new: true}
+        );
+        return updatedUser;
+      }
+      throw new AuthenticationError("You have to log in first.");
+    } */
   },
 };
 
