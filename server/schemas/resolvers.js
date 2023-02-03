@@ -27,6 +27,19 @@ const resolvers = {
       } catch (err) {
         throw new Error("No workout by the given ID");
       }
+    },
+    //get All sets
+    sets: async () => {
+      return Set.find()
+    },
+    //get set by ID
+    set: async ({ setId }) => {
+      try {
+        const setData = await Set.findOne({ _id: setId });
+        return setData;
+      } catch (err) {
+        throw new Error("No Set by the given ID");
+      }
     }
   },
 
