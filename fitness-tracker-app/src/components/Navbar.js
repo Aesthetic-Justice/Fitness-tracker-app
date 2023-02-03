@@ -56,12 +56,12 @@ const AppNavbar = () => {
           )}
         </div>
       </div>
-      <Example show={showModal} setShow={setShowModal} />
+      <RegistrationModal show={showModal} setShow={setShowModal} />
     </>
   );
 };
 
-function Example({ show, setShow }) {
+function RegistrationModal({ show, setShow }) {
   const [currTab, setCurrTab] = useState("login");
 
   const handleClose = () => {

@@ -10,7 +10,7 @@
     "start": "node server/server.js",
     "predeploy": "cd client && npm run build",
     "deploy": "cd client && gh-pages -d build",
-    "develop": "concurrently \"cd server && npm run start\" \"cd fitness-tracker-app && npm start\"",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd fitness-tracker-app && npm start\"",
     "install": "cd server && npm i && cd ../fitness-tracker-app && npm i"
   },
   "repository": {
