@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { Container } from 'react-bootstrap';
 
-function GridComplexExample() {
+function WorkoutForm() {
   return (
     <Container fluid>
     <Form>
@@ -108,4 +108,4 @@ function GridComplexExample() {
   );
 }
 
-export default GridComplexExample;
+export default WorkoutForm;
