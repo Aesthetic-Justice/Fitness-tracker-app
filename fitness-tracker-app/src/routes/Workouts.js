@@ -1,13 +1,14 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
-import PcaHero from "../components/pcaHero";
+import Weight from "../components/weight";
 import Workout from "../components/workout";
+// import weightrack from "../assets;"
 
 const Workouts = () => {
   return (
     <div>
       <Navbar />
-      <PcaHero heading="Workouts" />
+      <Weight heading="Workouts" />
       <Workout/>
       <Footer />
     </div>
