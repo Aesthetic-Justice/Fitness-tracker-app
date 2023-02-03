@@ -20,9 +20,9 @@ const resolvers = {
       return Workout.find()
     },
     //get workout by ID
-    workout: async (workoutID) => {
+    workout: async ({ workoutId}) => {
       try {
-        const workoutData = await Workout.findById(workoutID);
+        const workoutData = await Workout.findOne({ _id: workoutId});
         return workoutData;
       } catch (err) {
         throw new Error("No workout by the given ID");

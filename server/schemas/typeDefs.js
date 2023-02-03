@@ -30,6 +30,8 @@ const typeDefs = gql`
 
   type Query {
     me: User
+    workouts: [Workout]!
+    workout(workoutId: ID!): Workout 
   }
 
   type Mutation {
