@@ -98,6 +98,19 @@ const resolvers = {
       } catch(err){
         throw new Error ("Creation failed.")
       }
+    },
+    deleteWorkout: async (_parent, {date, sets}) => {
+      try{
+        const newWorkout = await Workout.findOneAndDelete(
+          {
+            date: date,
+            sets: sets
+          }
+        )
+        return newWorkout;
+      } catch(err){
+        throw new Error ("Deletion failed.")
+      }
     }
   },
 };
