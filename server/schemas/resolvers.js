@@ -17,29 +17,41 @@ const resolvers = {
     },
     //get All workouts
     workouts: async () => {
-      return Workout.find();
+      if (context.user) {
+        return Workout.find();
+      }
+      throw new AuthenticationError("You have to log in first!");
     },
     //get workout by ID
     workout: async ({ workoutId }) => {
-      try {
-        const workoutData = await Workout.findOne({ _id: workoutId });
-        return workoutData;
-      } catch (err) {
-        throw new Error("No workout by the given ID");
+      if (context.user) {
+        try {
+          const workoutData = await Workout.findOne({ _id: workoutId });
+          return workoutData;
+        } catch (err) {
+          throw new Error("No workout by the given ID");
+        }
       }
+      throw new AuthenticationError("You have to log in first!");
     },
     //get All sets
     sets: async () => {
-      return Set.find();
+      if (context.user) {
+        return Set.find();
+      }
+      throw new AuthenticationError("You have to log in first!");
     },
     //get set by ID
     set: async ({ setId }) => {
-      try {
-        const setData = await Set.findOne({ _id: setId });
-        return setData;
-      } catch (err) {
-        throw new Error("No Set by the given ID");
+      if (context.user) {
+        try {
+          const setData = await Set.findOne({ _id: setId });
+          return setData;
+        } catch (err) {
+          throw new Error("No Set by the given ID");
+        }
       }
+      throw new AuthenticationError("You have to log in first!");
     },
   },
 
@@ -86,31 +98,37 @@ const resolvers = {
       }
       throw new AuthenticationError("You have to log in first.");
     },
-    createWorkout: async (_parent, {date, sets}) =>{
-      try{
-        const newWorkout = await Workout.create(
-          {
-            date: date,
-            sets: sets
-          }
-        )
-        return newWorkout;
-      } catch(err){
-        throw new Error ("Creation failed.")
+    createWorkout: async (_parent, { date, sets }) => {
+      if (context.user) {
+        try {
+          const newWorkout = await Workout.create(
+            {
+              date: date,
+              sets: sets
+            }
+          )
+          return newWorkout;
+        } catch (err) {
+          throw new Error("Creation failed.")
+        }
       }
+      throw new AuthenticationError("You have to log in first.");
     },
-    deleteWorkout: async (_parent, {date, sets}) => {
-      try{
-        const newWorkout = await Workout.findOneAndDelete(
-          {
-            date: date,
-            sets: sets
-          }
-        )
-        return newWorkout;
-      } catch(err){
-        throw new Error ("Deletion failed.")
+    deleteWorkout: async (_parent, { date, sets }) => {
+      if (context.user) {
+        try {
+          const newWorkout = await Workout.findOneAndDelete(
+            {
+              date: date,
+              sets: sets
+            }
+          )
+          return newWorkout;
+        } catch (err) {
+          throw new Error("Deletion failed.")
+        }
       }
+      throw new AuthenticationError("You have to log in first.");
     }
   },
 };
