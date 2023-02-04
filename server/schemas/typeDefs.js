@@ -41,6 +41,7 @@ const typeDefs = gql`
     signup(username: String!, email: String!, password: String!): Auth
     addWorkoutToUser(workoutId: ID!): User
     removeWorkoutFromUser(workoutId: ID!): User
+    createWorkout(date: String!, sets: [String!]!): Workout
   }
 `;
 

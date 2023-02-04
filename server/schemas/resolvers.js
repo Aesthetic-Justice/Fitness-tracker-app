@@ -85,6 +85,19 @@ const resolvers = {
         return updatedUser;
       }
       throw new AuthenticationError("You have to log in first.");
+    },
+    createWorkout: async (_parent, {date, sets}) =>{
+      try{
+        const newWorkout = await Workout.create(
+          {
+            date: date,
+            sets: sets
+          }
+        )
+        return newWorkout;
+      } catch(err){
+        throw new Error ("Creation failed.")
+      }
     }
   },
 };
