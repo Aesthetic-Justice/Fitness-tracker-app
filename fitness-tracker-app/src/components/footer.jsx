@@ -1,5 +1,5 @@
 import "./footer.css";
-import { FaGithub, FaHome, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaHome } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa";
 import { FaMailBulk } from "react-icons/fa";
 
@@ -34,10 +34,28 @@ const footer = () => {
           </div>
         </div>
         <div className="right">
-          <h4>About the Company</h4>
-          <p>Wow, what an amazing company!</p>
+          <h4>Our Team</h4>
           <div className="social">
+            <p>Banny Walia</p>
             <a href="https://github.com/bannywalia">
+              <FaGithub
+                size={30}
+                style={{ color: "#fff", marginRight: "1rem" }}
+              />
+            </a>
+          </div>
+          <div className="social">
+            <p>Hakim Yusuf</p>
+            <a href="https://github.com/bannywalia">
+              <FaGithub
+                size={30}
+                style={{ color: "#fff", marginRight: "1rem" }}
+              />
+            </a>
+          </div>
+          <div className="social">
+            <p>Troy Reid-Knight</p>
+            <a href="https://github.com/TRK41">
               <FaGithub
                 size={30}
                 style={{ color: "#fff", marginRight: "1rem" }}
