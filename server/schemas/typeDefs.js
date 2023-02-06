@@ -5,7 +5,6 @@ const typeDefs = gql`
     _id: ID
     name: String
     duration: Int
-    intensity: Int
     target: String
   }
 
@@ -13,7 +12,6 @@ const typeDefs = gql`
     _id: ID
     name: String
     duration: Int
-    intensity: Int
     target: String
   }
 

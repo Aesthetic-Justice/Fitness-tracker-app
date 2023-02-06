@@ -10,10 +10,6 @@ const setSchema = new Schema(
             type: Number,
             required: true
         },
-        intensity: {
-            type: Number,
-            required: true
-        },
         target: {
             type: String,
             required: true
