@@ -10,7 +10,7 @@ export const Query_User = gql`
   }
 `;
 
-export const Query_Sets = gpl`
+export const Query_Sets = gql`
   query getSets {
     sets {
       _id
