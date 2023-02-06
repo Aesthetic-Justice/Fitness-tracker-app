@@ -8,7 +8,6 @@ class weight extends Component {
       <div className="hero">
         <div className="mask">
           <img src={WeightImg} alt="Weightimg" className="weight-img" />
-          <h1>{this.props.heading}</h1>
           <p>{this.props.text}</p>
         </div>
         <div className="content">
