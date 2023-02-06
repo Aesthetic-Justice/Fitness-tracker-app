@@ -5,7 +5,8 @@ import Row from 'react-bootstrap/Row';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { Container } from 'react-bootstrap';
 
-function WorkoutForm() {
+function WorkoutForm(sets) {
+  console.log(sets)
   return (
     <Container fluid>
     <Form>
