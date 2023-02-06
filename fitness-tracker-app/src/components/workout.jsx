@@ -8,10 +8,10 @@ import WorkoutType from './WorkoutType';
 
 function WorkoutForm(sets) {
   let WorkoutArray = [];
-  let num=0;
-  for(const iterator of sets.sets){
-      num++;
-      WorkoutArray.push(<WorkoutType data={iterator} key={num}/>)
+  let num = 0;
+  for (const iterator of sets.sets) {
+    num++;
+    WorkoutArray.push(<WorkoutType data={iterator} key={num} />)
   }
 
   return (
@@ -20,6 +20,9 @@ function WorkoutForm(sets) {
         <Row className="m-b3">
           <Col >
             <ListGroup>
+              <ListGroup.Item>
+                Click to Select your Sets
+              </ListGroup.Item>
               {WorkoutArray}
             </ListGroup>
           </Col>

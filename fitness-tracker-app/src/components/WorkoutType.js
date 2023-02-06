@@ -2,6 +2,7 @@ import { ListGroup } from 'react-bootstrap';
 
 const WorkoutType = (data) => {
     const setSelected = event => {
+        event.preventDefault();
         if (event.target.className === 'list-group-item list-group-item-action') {
             event.target.className = 'list-group-item list-group-item-action active';
         } else {
