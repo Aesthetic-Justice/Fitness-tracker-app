@@ -14,7 +14,7 @@ const Workouts = () => {
   return (
     <div>
       <Navbar />
-      <Weight heading="Workouts" />
+      <Weight heading="Create a Workout" />
       {loading ? (
         <div>loading</div>
       ) : (
