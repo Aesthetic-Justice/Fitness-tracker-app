@@ -1,11 +1,11 @@
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
 
-import { Container, ListGroup } from 'react-bootstrap';
-import WorkoutType from './WorkoutType';
+import { Container, ListGroup } from "react-bootstrap";
+import WorkoutType from "./WorkoutType";
 
 import { useMutation } from '@apollo/client';
 import { CREATEWORKOUT } from '../utils/mutations';
@@ -15,7 +15,7 @@ function WorkoutForm(sets) {
   let num = 0;
   for (const iterator of sets.sets) {
     num++;
-    WorkoutArray.push(<WorkoutType data={iterator} key={num} />)
+    WorkoutArray.push(<WorkoutType data={iterator} key={num} />);
   }
 
   const [createWorkout] = useMutation(CREATEWORKOUT);
@@ -56,7 +56,7 @@ function WorkoutForm(sets) {
     <Container fluid>
       <Form>
         <Row className="m-b3">
-          <Col >
+          <Col>
             <ListGroup>
               <ListGroup.Item disabled>
                 Click to Select your Sets
@@ -65,13 +65,12 @@ function WorkoutForm(sets) {
             </ListGroup>
           </Col>
 
-          <Col >
+          <Col>
             <FloatingLabel controlId="floatingSelect" label="Select Date">
               <Form.Control type="date" />
             </FloatingLabel>
           </Col>
         </Row>
-
 
         <Button variant="primary" type="submit" onClick={PushWorkout}>
           Submit
