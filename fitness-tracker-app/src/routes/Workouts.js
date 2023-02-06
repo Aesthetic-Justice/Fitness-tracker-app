@@ -22,7 +22,6 @@ const Workouts = () => {
           sets={sets}
         />
       )}
-      <Workout/>
       <Footer />
     </div>
   );
