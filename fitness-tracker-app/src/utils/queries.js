@@ -9,3 +9,14 @@ export const Query_User = gql`
     }
   }
 `;
+
+export const Query_Sets = gpq`
+  query getSets {
+    sets {
+      _id
+      name
+      duration
+      target
+    }
+  }
+`;
