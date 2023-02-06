@@ -8,7 +8,7 @@ const footer = () => {
         <div className="left">
           <h4>Our Mission</h4>
           <p>
-            To help new and experienced athletes to track their goals and
+            To help new and experienced athletes to track their workouts and
             progression, achieve their goals, and help them obtain their dream
             physique! Lets Get Fit!
           </p>
