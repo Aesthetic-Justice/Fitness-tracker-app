@@ -17,7 +17,19 @@ function WorkoutForm(sets) {
 
   const PushWorkout = (e) =>{
     e.preventDefault();
-    console.log('hello world');
+    const submission = {
+      sets:[
+
+      ],
+      date:""
+    };
+    const selectedSets = document.getElementsByClassName('active');
+    for(const iterator of selectedSets){
+      submission.sets.push(iterator.innerHTML);
+    }
+    const selectedDate = document.getElementById('floatingSelect').value;
+    submission.date=selectedDate;
+    console.log(submission);
   }
 
   return (
@@ -26,7 +38,7 @@ function WorkoutForm(sets) {
         <Row className="m-b3">
           <Col >
             <ListGroup>
-              <ListGroup.Item>
+              <ListGroup.Item disabled>
                 Click to Select your Sets
               </ListGroup.Item>
               {WorkoutArray}
@@ -34,8 +46,8 @@ function WorkoutForm(sets) {
           </Col>
 
           <Col >
-            <FloatingLabel controlId="floatingSelect" label="Date">
-              <Form.Control type="date" placeholder="Date" />
+            <FloatingLabel controlId="floatingSelect" label="Select Date">
+              <Form.Control type="date" />
             </FloatingLabel>
           </Col>
         </Row>
