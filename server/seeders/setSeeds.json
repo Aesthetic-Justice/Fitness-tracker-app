@@ -1,0 +1,52 @@
+[
+    {
+        "name":"Pushup",
+        "duration":"10",
+        "target":"Chest"
+    },
+    {
+        "name":"Floor Press",
+        "duration":"5",
+        "target":"Chest"
+    },
+    {
+        "name":"Front Hold",
+        "duration":"5",
+        "target":"Shoulder"
+    },
+    {
+        "name":"Cable Lateral Rise",
+        "duration":"10",
+        "target":"Shoulder"
+    },
+    {
+        "name":"Step Up",
+        "duration":"10",
+        "target":"Leg"
+    },
+    {
+        "name":"Pause Squat",
+        "duration":"5",
+        "target":"Leg"
+    },
+    {
+        "name":"Crunch",
+        "duration":"10",
+        "target":"Abdominal"
+    },
+    {
+        "name":"Plank",
+        "duration":"5",
+        "target":"Abdominal"
+    },
+    {
+        "name":"Barbell Curl",
+        "duration":"10",
+        "target":"Bicep"
+    },
+    {
+        "name":"Hammer Curl",
+        "duration":"5",
+        "target":"Bicep"
+    }
+]
