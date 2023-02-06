@@ -1,37 +1,17 @@
 import "./footer.css";
-import { FaGithub, FaHome } from "react-icons/fa";
-import { FaPhone } from "react-icons/fa";
-import { FaMailBulk } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 const footer = () => {
   return (
     <div className="footer">
       <div className="footer-container">
         <div className="left">
-          <div className="location">
-            <FaHome size={20} style={{ color: "#fff", marginRight: "2rem" }} />
-            <div>
-              <p>Ottawa, Ontario</p>
-            </div>
-          </div>
-          <div className="phone">
-            <h4>
-              <FaPhone
-                size={20}
-                style={{ color: "#fff", marginRight: "2rem" }}
-              />
-              613-111-1111
-            </h4>
-          </div>
-          <div className="email">
-            <h4>
-              <FaMailBulk
-                size={20}
-                style={{ color: "#fff", marginRight: "2rem" }}
-              />
-              Banny.walia07@gmail.com
-            </h4>
-          </div>
+          <h4>Our Mission</h4>
+          <p>
+            To help new and experienced athletes to track their goals and
+            progression, achieve their goals, and help them obtain their dream
+            physique! Lets Get Fit!
+          </p>
         </div>
         <div className="right">
           <h4>Our Team</h4>
