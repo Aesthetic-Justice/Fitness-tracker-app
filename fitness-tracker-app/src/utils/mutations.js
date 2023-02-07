@@ -23,3 +23,15 @@ export const SIGNUP = gql`
     }
   }
 `;
+
+export const CREATEWORKOUT = gql`
+  mutation createWorkout($date: String!, $sets: [SetInput!]!){
+    createWorkout(date: $date, sets: $sets){
+      _id
+      date
+      sets {
+        name
+      }
+    }
+  }
+`;

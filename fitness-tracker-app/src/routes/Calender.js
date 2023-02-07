@@ -1,12 +1,12 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
-import PcaHero from "../components/pcaHero";
+import Kalendar from "../components/calendar";
 
 const Calender = () => {
   return (
     <div>
       <Navbar />
-      <PcaHero />
+      <Kalendar />
       <Footer />
     </div>
   );

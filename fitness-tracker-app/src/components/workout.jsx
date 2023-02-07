@@ -7,6 +7,9 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import { Container, ListGroup } from "react-bootstrap";
 import WorkoutType from "./WorkoutType";
 
+import { useMutation } from '@apollo/client';
+import { CREATEWORKOUT } from '../utils/mutations';
+
 function WorkoutForm(sets) {
   let WorkoutArray = [];
   let num = 0;
@@ -15,20 +18,39 @@ function WorkoutForm(sets) {
     WorkoutArray.push(<WorkoutType data={iterator} key={num} />);
   }
 
-  const PushWorkout = (e) => {
+  const [createWorkout] = useMutation(CREATEWORKOUT);
+
+  const PushWorkout = async (e) =>{
+    //prevent page from refreshing
     e.preventDefault();
+
+    //create data object for creating a "workout"
     const submission = {
-      sets: [],
-      date: "",
+      sets:[
+
+      ],
+      //Grabs the date set by the user
+      date:document.getElementById('floatingSelect').value
     };
-    const selectedSets = document.getElementsByClassName("active");
-    for (const iterator of selectedSets) {
+
+    //Grabs all the user selected workouts on the page
+    const selectedSets = document.getElementsByClassName('active');
+    for(const iterator of selectedSets){
+      //Adds them to the submission data object
       submission.sets.push(iterator.innerHTML);
     }
-    const selectedDate = document.getElementById("floatingSelect").value;
-    submission.date = selectedDate;
-    console.log(submission);
-  };
+
+    try{
+      createWorkout({
+        variables: {
+          date: submission.date,
+          sets: submission.sets
+        }
+      });
+    } catch (err){
+      console.error(err);
+    }
+  }
 
   return (
     <Container fluid>
