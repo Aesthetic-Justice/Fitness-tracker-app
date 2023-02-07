@@ -37,11 +37,11 @@ This application is covered under **MIT** license.
 
 ### Contributing
 
-.
+Banny Walia [GitHub](https://github.com/bannywalia)
+Hakim Yusuf[GitHub](https://github.com/Aesthetic-Justice)
+Troy Reid-Knight[GitHub](https://github.com/TRK41)
 
 ### Questions
 
 If you have any questions, please reach out to the<br>
-Author: Banny Walia <br>
-Email : <banny.walia07@gmail.com> <br>
-Author's github profile: [GitHub](https://github.com/bannywalia)
+Authors: Banny Walia <br>
