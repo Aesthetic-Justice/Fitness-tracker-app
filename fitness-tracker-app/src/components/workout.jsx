@@ -36,9 +36,13 @@ function WorkoutForm(sets) {
     //Grabs all the user selected workouts on the page
     const selectedSets = document.getElementsByClassName('active');
     for(const iterator of selectedSets){
+      const grabbedSet = sets.sets.filter(c => c.name?.includes(iterator.innerHTML))[0];
+      const pushedSet = (({ name, duration, _id, target}) => ({ name, duration, _id, target}))(grabbedSet);
+      
       //Adds them to the submission data object
-      submission.sets.push(iterator.innerHTML);
-    }
+      submission.sets.push(pushedSet);
+    };
+
 
     try{
       createWorkout({

@@ -20,3 +20,14 @@ export const Query_Sets = gql`
     }
   }
 `;
+
+export const Query_Set = gql`
+  query getSet {
+    sets {
+      _id
+      name
+      duration
+      target
+    }
+  }
+`;
