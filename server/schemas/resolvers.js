@@ -64,7 +64,7 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addWorkoutToUser: async (_parent, workoutId) => {
+    addWorkoutToUser: async (_parent, workoutId, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
@@ -75,7 +75,7 @@ const resolvers = {
       }
       throw new AuthenticationError("You have to log in first.");
     },
-    removeWorkoutFromUser: async (_parent, workoutId) => {
+    removeWorkoutFromUser: async (_parent, workoutId, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndDelete(
           { _id: context.user._id },
@@ -86,7 +86,7 @@ const resolvers = {
       }
       throw new AuthenticationError("You have to log in first.");
     },
-    createWorkout: async (_parent, { date, sets }) => {
+    createWorkout: async (_parent, { date, sets }, context) => {
       if (context.user) {
         try {
           const newWorkout = await Workout.create(
@@ -102,7 +102,7 @@ const resolvers = {
       }
       throw new AuthenticationError("You have to log in first.");
     },
-    deleteWorkout: async (_parent, { date, sets }) => {
+    deleteWorkout: async (_parent, { date, sets }, context) => {
       if (context.user) {
         try {
           const newWorkout = await Workout.findOneAndDelete(
